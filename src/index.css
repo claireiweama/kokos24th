@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+html,
+body {
+  /* overflow: hidden; */
+  height: 100%;
+  margin: 0;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.25);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.25);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(229, 107, 138, 0.3);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 15px rgba(229, 107, 138, 0.8),
+      0 0 30px rgba(229, 107, 138, 0.5);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(229, 107, 138, 0.3);
+  }
+}
+.animate-glow {
+  animation: glowPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes bubbleAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    box-shadow: 0 0 0 rgba(239, 68, 68, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+    box-shadow:
+      0 0 20px rgba(239, 68, 68, 0.5),
+      0 0 35px rgba(255, 255, 255, 0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow:
+      0 0 12px rgba(239, 68, 68, 0.3),
+      0 0 24px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.animate-bubble {
+  animation: bubbleAppear 0.4s ease-out forwards,
+             bubbleGlow 2s ease-in-out infinite 0.4s;
+}
