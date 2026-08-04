@@ -379,7 +379,7 @@ function App() {
             </h1>
             <p
               ref={subtitleRef}
-              className="text-xs sm:text-sm md:text-base text-[#E56B8A] pt-2 text-center"
+              className="italic text-xs sm:text-sm md:text-base text-[#E56B8A] pt-2 text-center"
             >
               Don't you dare click NO!!!
             </p>
