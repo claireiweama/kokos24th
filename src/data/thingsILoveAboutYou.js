@@ -34,7 +34,7 @@ export const thingsiLoveAboutYou = [
 export const wishesFromLovedOnes = [
     {
         id: 1,
-        image: "/images/IMG_7697.JPG",
+        image: "/images/IMG_4342.JPG",
         wish: "Wish 1",
         name: "Name 1",
     },
