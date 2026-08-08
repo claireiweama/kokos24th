@@ -28,9 +28,9 @@ export function MobileSlider({
             onDragEnd={(event, info) => {
               const threshold = 100;
 
-              if (info.offset.x < -threshold) {
+              if (info.offset.x < -threshold && currentIndex < totalLoves - 1) {
                 onNext();
-              } else if (info.offset.x > threshold) {
+              } else if (info.offset.x > threshold && currentIndex > 0) {
                 onPrevious();
               }
             }}

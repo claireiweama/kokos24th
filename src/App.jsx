@@ -345,7 +345,7 @@ function App() {
         <div
           ref={bubbleRef}
           onTransitionEnd={handleBubbleTransitionEnd}
-          className="fixed rounded-full bg-white px-4 py-2 text-[#1560BD] shadow-lg z-20 transition-opacity duration-500 ease-out animate-glow"
+          className="fixed rounded-full bg-white px-4 py-2 text-[#4A5D7A] shadow-lg z-20 transition-opacity duration-500 ease-out animate-glow"
           style={{
             left: bubblePosition.x,
             top: bubblePosition.y,

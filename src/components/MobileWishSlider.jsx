@@ -13,7 +13,6 @@ function MobileWishSlider({
   return (
     <div className="md:hidden pt-8 overflow-hidden px-4">
       <div className="flex justify-center">
-        
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             style={{ touchAction: "pan-y" }}
@@ -26,13 +25,15 @@ function MobileWishSlider({
               const velocityThreshold = 500;
 
               if (
-                info.offset.x < -swipeThreshold ||
-                info.velocity.x < -velocityThreshold
+                (info.offset.x < -swipeThreshold ||
+                  info.velocity.x < -velocityThreshold) &&
+                currentIndex < totalWishes - 1
               ) {
                 onNext();
               } else if (
-                info.offset.x > swipeThreshold ||
-                info.velocity.x > velocityThreshold
+                (info.offset.x > swipeThreshold ||
+                  info.velocity.x > velocityThreshold) &&
+                currentIndex > 0
               ) {
                 onPrevious();
               }
@@ -99,62 +100,62 @@ function MobileWishSlider({
                   ← Swipe to read more wishes →
                 </p>
                 <div className="m-4 flex justify-center">
-          <motion.div
-            key={currentIndex}
-            initial={{
-              scale: 0.9,
-              opacity: 0,
-              y: -6,
-            }}
-            animate={{
-              scale: [0.92, 1.08, 1],
-              opacity: 1,
-              y: 0,
-              boxShadow: [
-                "0 0 8px rgba(229,107,138,0.15)",
-                "0 0 18px rgba(229,107,138,0.45)",
-                "0 0 8px rgba(229,107,138,0.15)",
-              ],
-            }}
-            transition={{
-              scale: {
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-              boxShadow: {
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-              opacity: {
-                duration: 0.25,
-              },
-              y: {
-                duration: 0.25,
-              },
-            }}
-            className="inline-flex items-center gap-2 rounded-full bg-white/85 backdrop-blur-md border border-pink-200/70 px-5 py-2 shadow-lg"
-          >
-            <motion.span
-              animate={{
-                rotate: [-8, 8, -8],
-              }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-lg"
-            >
-              💌
-            </motion.span>
+                  <motion.div
+                    key={currentIndex}
+                    initial={{
+                      scale: 0.9,
+                      opacity: 0,
+                      y: -6,
+                    }}
+                    animate={{
+                      scale: [0.92, 1.08, 1],
+                      opacity: 1,
+                      y: 0,
+                      boxShadow: [
+                        "0 0 8px rgba(229,107,138,0.15)",
+                        "0 0 18px rgba(229,107,138,0.45)",
+                        "0 0 8px rgba(229,107,138,0.15)",
+                      ],
+                    }}
+                    transition={{
+                      scale: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                      boxShadow: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                      opacity: {
+                        duration: 0.25,
+                      },
+                      y: {
+                        duration: 0.25,
+                      },
+                    }}
+                    className="inline-flex items-center gap-2 rounded-full bg-white/85 backdrop-blur-md border border-pink-200/70 px-5 py-2 shadow-lg"
+                  >
+                    <motion.span
+                      animate={{
+                        rotate: [-8, 8, -8],
+                      }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="text-lg"
+                    >
+                      💌
+                    </motion.span>
 
-            <span className="text-sm font-semibold tracking-wide text-[#E56B8A]">
-              {currentIndex + 1} of {totalWishes}
-            </span>
-          </motion.div>
-        </div>
+                    <span className="text-sm font-semibold tracking-wide text-[#E56B8A]">
+                      {currentIndex + 1} of {totalWishes}
+                    </span>
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
@@ -165,4 +166,3 @@ function MobileWishSlider({
 }
 
 export default MobileWishSlider;
-

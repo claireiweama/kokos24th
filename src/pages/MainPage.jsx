@@ -8,6 +8,8 @@ import {
 } from "react-icons/io5";
 
 import BackgroundMusic from "../components/BackgroundMusic";
+import BubbleFrame from "../components/WishWall/BubbleFrame";
+import WishWall from "../components/WishWall/WishWall";
 
 import { MobileSlider } from "../components/MobileSlider";
 import MobileWishSlider from "../components/MobileWishSlider";
@@ -41,36 +43,32 @@ function MainPage() {
   const cardRef = useRef(null);
 
   const nextLove = () => {
-  setLoveDirection(1);
+  if (currentLoveIndex === thingsiLoveAboutYou.length - 1) return;
 
-  setCurrentLoveIndex((prev) =>
-    prev === thingsiLoveAboutYou.length - 1 ? 0 : prev + 1
-  );
+  setLoveDirection(1);
+  setCurrentLoveIndex((prev) => prev + 1);
 };
 
 const previousLove = () => {
-  setLoveDirection(-1);
+  if (currentLoveIndex === 0) return;
 
-  setCurrentLoveIndex((prev) =>
-    prev === 0 ? thingsiLoveAboutYou.length - 1 : prev - 1
-  );
+  setLoveDirection(-1);
+  setCurrentLoveIndex((prev) => prev - 1);
 };
 
   const nextWish = () => {
-    setWishDirection(1);
+  if (currentWishIndex === wishesFromLovedOnes.length - 1) return;
 
-    setCurrentWishIndex((prev) =>
-      prev === wishesFromLovedOnes.length - 1 ? 0 : prev + 1,
-    );
-  };
+  setWishDirection(1);
+  setCurrentWishIndex((prev) => prev + 1);
+};
 
-  const previousWish = () => {
-    setWishDirection(-1);
+const previousWish = () => {
+  if (currentWishIndex === 0) return;
 
-    setCurrentWishIndex((prev) =>
-      prev === 0 ? wishesFromLovedOnes.length - 1 : prev - 1,
-    );
-  };
+  setWishDirection(-1);
+  setCurrentWishIndex((prev) => prev - 1);
+};
 
   return (
     <>
@@ -144,6 +142,9 @@ const previousLove = () => {
           />
 
           <WishWallHeading />
+          <BubbleFrame />
+          <WishWall />
+          
         </motion.div>
       </div>
     </>
