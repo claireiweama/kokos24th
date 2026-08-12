@@ -28,7 +28,11 @@ import {
   ThingsILoveAboutYouHeading,
   LovedByManyHeading,
   WishWallHeading,
+  AndFromMeHeading,
 } from "../components/Heading";
+
+import { getWishes, createWish } from "../../utilities/wishService";
+import WishWallDisplay from "../components/WishWall/WishWallDisplay";
 
 function MainPage() {
   const [currentLoveIndex, setCurrentLoveIndex] = useState(0);
@@ -37,38 +41,73 @@ function MainPage() {
   const [currentWishIndex, setCurrentWishIndex] = useState(0);
   const [wishDirection, setWishDirection] = useState(1);
 
+  const [wishes, setWishes] = useState([]);
+
   const currentLove = thingsiLoveAboutYou[currentLoveIndex];
   const currentWish = wishesFromLovedOnes[currentWishIndex];
 
   const cardRef = useRef(null);
 
   const nextLove = () => {
-  if (currentLoveIndex === thingsiLoveAboutYou.length - 1) return;
+    if (currentLoveIndex === thingsiLoveAboutYou.length - 1) return;
 
-  setLoveDirection(1);
-  setCurrentLoveIndex((prev) => prev + 1);
-};
+    setLoveDirection(1);
+    setCurrentLoveIndex((prev) => prev + 1);
+  };
 
-const previousLove = () => {
-  if (currentLoveIndex === 0) return;
+  const previousLove = () => {
+    if (currentLoveIndex === 0) return;
 
-  setLoveDirection(-1);
-  setCurrentLoveIndex((prev) => prev - 1);
-};
+    setLoveDirection(-1);
+    setCurrentLoveIndex((prev) => prev - 1);
+  };
 
   const nextWish = () => {
-  if (currentWishIndex === wishesFromLovedOnes.length - 1) return;
+    if (currentWishIndex === wishesFromLovedOnes.length - 1) return;
 
-  setWishDirection(1);
-  setCurrentWishIndex((prev) => prev + 1);
-};
+    setWishDirection(1);
+    setCurrentWishIndex((prev) => prev + 1);
+  };
 
-const previousWish = () => {
-  if (currentWishIndex === 0) return;
+  const previousWish = () => {
+    if (currentWishIndex === 0) return;
 
-  setWishDirection(-1);
-  setCurrentWishIndex((prev) => prev - 1);
-};
+    setWishDirection(-1);
+    setCurrentWishIndex((prev) => prev - 1);
+  };
+
+  useEffect(() => {
+    const loadWishes = async () => {
+      try {
+        const data = await getWishes();
+
+        setWishes(data);
+      } catch (error) {
+        console.error("Failed to load wishes:", error);
+      }
+    };
+
+    loadWishes();
+  }, []);
+
+  const handleWishSubmit = async (formData) => {
+    try {
+      const newWish = await createWish(formData.name, formData.wish);
+
+      setWishes((prevWishes) => [newWish, ...prevWishes]);
+
+      // console.log("Wish successfully added:", newWish);
+
+      // } catch (error) {
+      //   console.error("Failed to submit wish:", error);
+      // }
+
+      return newWish;
+    } catch (error) {
+      console.error("Failed to submit wish:", error);
+      throw error;
+    }
+  };
 
   return (
     <>
@@ -142,9 +181,11 @@ const previousWish = () => {
           />
 
           <WishWallHeading />
-          <BubbleFrame />
-          <WishWall />
-          
+          <WishWallDisplay wishes={wishes} />
+
+          <WishWall onWishSubmitted={handleWishSubmit} />
+
+          <AndFromMeHeading />
         </motion.div>
       </div>
     </>
@@ -154,3 +195,5 @@ const previousWish = () => {
 export default MainPage;
 
 // Remember the audio object: If later you want a Mute button, Pause button, or Skip button, store the audio in a ref
+// The AI Validation
+// Dont forget to make the wish wall empty, by deleteing the text wishes

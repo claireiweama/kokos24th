@@ -37,4 +37,13 @@ export function WishWallHeading () {
   );
 }
 
+export function AndFromMeHeading () {
+  return (
+    <div className=" justify-center py-8 px-4">
+            <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#4A5D7A] py-4">
+              And from me ❤️...
+            </h1>
+    </div>
+  );
+}
 

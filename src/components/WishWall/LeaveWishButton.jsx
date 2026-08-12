@@ -1,24 +1,47 @@
+import { motion } from "motion/react";
+
 function LeaveWishButton({ onClick }) {
   return (
     <div className="flex justify-center mt-10">
-      <button
+      <motion.button
         onClick={onClick}
+        animate={{
+          scale: [1, 1.03, 1],
+        }}
+        transition={{
+          scale: {
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
+        whileHover={{
+          scale: 1.15,
+        }}
+        whileTap={{
+          scale: 0.95,
+        }}
         className="
+          inline-flex
+          items-center
+          gap-2
           rounded-full
-          bg-[#E56B8A]
+          bg-white/85
+          backdrop-blur-md
+          border
+          border-pink-200/70
           px-8
           py-3
-          text-white
+          mb-8
+          text-[#E56B8A]
           font-semibold
           shadow-lg
-          hover:scale-105
           hover:bg-[#d85a79]
-          transition-all
-          duration-300
+          hover:text-white
         "
       >
-        💌 Leave a Wish
-      </button>
+        💌&ensp; Leave a Wish
+      </motion.button>
     </div>
   );
 }

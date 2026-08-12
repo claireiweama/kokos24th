@@ -148,7 +148,7 @@ function MobileWishSlider({
                       }}
                       className="text-lg"
                     >
-                      💌
+                      💌&ensp;
                     </motion.span>
 
                     <span className="text-sm font-semibold tracking-wide text-[#E56B8A]">

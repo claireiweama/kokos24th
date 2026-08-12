@@ -4,7 +4,7 @@ import { AnimatePresence } from "motion/react";
 import LeaveWishButton from "./LeaveWishButton";
 import WishForm from "./WishForm";
 
-function WishWall() {
+function WishWall({ onWishSubmitted }) {
   const [showForm, setShowForm] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -12,10 +12,9 @@ function WishWall() {
     wish: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(formData);
+  const handleSubmit = async (formData) => {
+   try {
+    await onWishSubmitted(formData);
 
     setFormData({
       name: "",
@@ -23,7 +22,10 @@ function WishWall() {
     });
 
     setShowForm(false);
-  };
+  } catch (error) {
+    console.error("Could not submit wish:", error);
+  }
+};
 
   return (
     <>
