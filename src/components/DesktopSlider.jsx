@@ -81,7 +81,7 @@ function DesktopSlider({
                       {currentNote.title}
                     </h2>
 
-                    <p className="text-lg text-[#4B5563] leading-8">
+                    <p className="text-lg text-[#4B5563] leading-8 whitespace-pre-line">
                       {currentNote.text}
                     </p>
                   </motion.div>

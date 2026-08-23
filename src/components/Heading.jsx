@@ -30,7 +30,7 @@ export function WishWallHeading () {
   return (
     <div className=" justify-center py-8 px-4">
             <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#4A5D7A] py-4">
-              Wish Wall
+              Wish Wall ❤️
             </h1>
             <p className="italic text-xs sm:text-sm md:text-base text-[#E56B8A] text-center">Even those who don't know you have some wishes for you, Read them below...</p>
     </div>

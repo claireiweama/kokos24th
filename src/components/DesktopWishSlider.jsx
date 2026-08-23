@@ -57,7 +57,7 @@ function DesktopWishSlider({ currentWish, direction, isEven }) {
                 delay: 0.05,
               }}
             >
-              <p className="text-xl italic leading-9 text-gray-700">
+              <p className="text-xl italic leading-9 text-gray-700 whitespace-pre-line">
                 "{currentWish.wish}"
               </p>
 

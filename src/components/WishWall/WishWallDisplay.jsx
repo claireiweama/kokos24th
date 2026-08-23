@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import BubbleFrame from "./BubbleFrame";
+import pastelColors from "../../data/pastelColors";
 
 const wishStyles = [
   {
@@ -24,6 +25,12 @@ const wishStyles = [
   },
 ];
 
+const getWishColor = (id) => {
+  const mixedNumber = (id * 17 + 23) % pastelColors.length;
+
+  return pastelColors[mixedNumber];
+};
+
 function WishWallDisplay({ wishes }) {
   return (
     <BubbleFrame>
@@ -35,6 +42,7 @@ function WishWallDisplay({ wishes }) {
         <div className="flex flex-wrap items-start gap-4">
           {wishes.map((wish, index) => {
             const style = wishStyles[index % wishStyles.length];
+            const borderColor = getWishColor(wish.id);
 
             return (
               <motion.div
@@ -53,13 +61,13 @@ function WishWallDisplay({ wishes }) {
                 }}
                 style={{
                   marginTop: `${style.marginTop}px`,
+                  borderColor: borderColor,
                 }}
                 className="
                   w-full
                   sm:w-[48%]
                   rounded-2xl
-                  border
-                  border-pink-200/70
+                  border-2
                   bg-white/70
                   p-4
                   shadow-md

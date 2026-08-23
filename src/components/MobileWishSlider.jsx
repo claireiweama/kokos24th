@@ -89,7 +89,7 @@ function MobileWishSlider({
                   delay: 0.05,
                 }}
               >
-                <p className="text-base italic sm:text-lg md:text-xl leading-7 sm:leading-8 md:leading-9 text-[#4B5563] text-center md:text-left ">
+                <p className="text-base italic sm:text-lg md:text-xl leading-7 sm:leading-8 md:leading-9 text-[#4B5563] text-center md:text-left whitespace-pre-line ">
                   "{currentWish.wish}"
                 </p>
 

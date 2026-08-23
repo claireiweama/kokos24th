@@ -56,7 +56,7 @@ export function MobileSlider({
                   {currentLove.title}
                 </h2>
 
-                <p className="text-base leading-8 text-[#4B5563]">
+                <p className="text-base leading-8 text-[#4B5563] whitespace-pre-line">
                   {currentLove.text}
                 </p>
               </div>

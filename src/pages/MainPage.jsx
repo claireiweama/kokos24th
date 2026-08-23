@@ -13,6 +13,7 @@ import WishWall from "../components/WishWall/WishWall";
 
 import { MobileSlider } from "../components/MobileSlider";
 import MobileWishSlider from "../components/MobileWishSlider";
+import MyWish from "../components/MyWish";
 
 import DesktopSlider from "../components/DesktopSlider";
 import DesktopWishSlider from "../components/DesktopWishSlider";
@@ -33,6 +34,12 @@ import {
 
 import { getWishes, createWish } from "../../utilities/wishService";
 import WishWallDisplay from "../components/WishWall/WishWallDisplay";
+
+// import SistersImage from "../components/SistersSection/SistersImage";
+import TestModel from "../components/SistersSection/TestModel";
+
+console.log("Number of loved ones wishes:", wishesFromLovedOnes.length);
+console.log("Wishes:", wishesFromLovedOnes);
 
 function MainPage() {
   const [currentLoveIndex, setCurrentLoveIndex] = useState(0);
@@ -186,6 +193,13 @@ function MainPage() {
           <WishWall onWishSubmitted={handleWishSubmit} />
 
           <AndFromMeHeading />
+          <MyWish />
+          <TestModel />
+
+          <footer class=" mb-9 text-center">
+            <p class="text-xs font-thin text-[#4A5D7A]">Designed by PC&sup2;I</p>
+            <p class="text-xs font-thin text-[#4A5D7A]">All rights reserved. &copy;</p>
+          </footer>
         </motion.div>
       </div>
     </>
