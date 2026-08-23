@@ -1,45 +1,23 @@
-import { useState, useEffect, useRef } from "react";
-import {
-  IoArrowBack,
-  IoArrowForward,
-  IoEllipseOutline,
-  IoEllipseSharp,
-  IoHeart,
-} from "react-icons/io5";
+import { ThingsILoveAboutYouHeading, LovedByManyHeading, WishWallHeading, AndFromMeHeading, } from "../components/Heading";
+import { thingsiLoveAboutYou, wishesFromLovedOnes, } from "../data/thingsILoveAboutYou";
+import { getWishes, createWish } from "../../utilities/wishService";
+import { useState, useEffect } from "react";
+import { MobileSlider } from "../components/MobileSlider";
+import { motion } from "motion/react";
+
 
 import BackgroundMusic from "../components/BackgroundMusic";
-import BubbleFrame from "../components/WishWall/BubbleFrame";
 import WishWall from "../components/WishWall/WishWall";
-
-import { MobileSlider } from "../components/MobileSlider";
 import MobileWishSlider from "../components/MobileWishSlider";
 import MyWish from "../components/MyWish";
-
 import DesktopSlider from "../components/DesktopSlider";
 import DesktopWishSlider from "../components/DesktopWishSlider";
-
-import { motion } from "motion/react";
 import HeartsBackground from "../components/HeartsBackground";
-import {
-  thingsiLoveAboutYou,
-  wishesFromLovedOnes,
-} from "../data/thingsILoveAboutYou";
 import Navigation from "../components/Navigation";
-import {
-  ThingsILoveAboutYouHeading,
-  LovedByManyHeading,
-  WishWallHeading,
-  AndFromMeHeading,
-} from "../components/Heading";
-
-import { getWishes, createWish } from "../../utilities/wishService";
 import WishWallDisplay from "../components/WishWall/WishWallDisplay";
-
-// import SistersImage from "../components/SistersSection/SistersImage";
 import TestModel from "../components/SistersSection/TestModel";
+import Footer from "../components/Footer";
 
-console.log("Number of loved ones wishes:", wishesFromLovedOnes.length);
-console.log("Wishes:", wishesFromLovedOnes);
 
 function MainPage() {
   const [currentLoveIndex, setCurrentLoveIndex] = useState(0);
@@ -52,8 +30,6 @@ function MainPage() {
 
   const currentLove = thingsiLoveAboutYou[currentLoveIndex];
   const currentWish = wishesFromLovedOnes[currentWishIndex];
-
-  const cardRef = useRef(null);
 
   const nextLove = () => {
     if (currentLoveIndex === thingsiLoveAboutYou.length - 1) return;
@@ -103,12 +79,6 @@ function MainPage() {
 
       setWishes((prevWishes) => [newWish, ...prevWishes]);
 
-      // console.log("Wish successfully added:", newWish);
-
-      // } catch (error) {
-      //   console.error("Failed to submit wish:", error);
-      // }
-
       return newWish;
     } catch (error) {
       console.error("Failed to submit wish:", error);
@@ -120,10 +90,9 @@ function MainPage() {
     <>
       {/* <BackgroundMusic /> */}
 
-      <div ref={cardRef} className="relative min-h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden">
         <HeartsBackground />
 
-        {/* can i import motion.div? */}
         <motion.div
           className="relative z-10"
           initial={{
@@ -196,10 +165,8 @@ function MainPage() {
           <MyWish />
           <TestModel />
 
-          <footer class=" mb-9 text-center">
-            <p class="text-xs font-thin text-[#4A5D7A]">Designed by PC&sup2;I</p>
-            <p class="text-xs font-thin text-[#4A5D7A]">All rights reserved. &copy;</p>
-          </footer>
+          <Footer />
+          
         </motion.div>
       </div>
     </>
@@ -208,6 +175,3 @@ function MainPage() {
 
 export default MainPage;
 
-// Remember the audio object: If later you want a Mute button, Pause button, or Skip button, store the audio in a ref
-// The AI Validation
-// Dont forget to make the wish wall empty, by deleteing the text wishes

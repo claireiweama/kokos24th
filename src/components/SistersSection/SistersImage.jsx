@@ -2,20 +2,15 @@ import { motion, useMotionValue, useTransform } from "motion/react";
 
 
 function SistersImage() {
-  // Tracks the horizontal position of the mouse
   const x = useMotionValue(0);
-
-  // Tracks the vertical position of the mouse
   const y = useMotionValue(0);
 
-  // Converts mouse movement into a slight 3D rotation
   const rotateY = useTransform(x, [-100, 100], [-10, 10]);
   const rotateX = useTransform(y, [-100, 100], [10, -10]);
 
   const handleMouseMove = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
 
-    // Find the mouse position relative to the center of the image
     const mouseX = event.clientX - rect.left - rect.width / 2;
     const mouseY = event.clientY - rect.top - rect.height / 2;
 
@@ -24,7 +19,6 @@ function SistersImage() {
   };
 
   const handleMouseLeave = () => {
-    // Return the image to its normal position
     x.set(0);
     y.set(0);
   };

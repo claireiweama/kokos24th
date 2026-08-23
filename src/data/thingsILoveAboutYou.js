@@ -5,34 +5,55 @@ export const thingsiLoveAboutYou = [
         title: "How you love God ",
         text: 
         `
-        I love how you love God, I love how you don’t compromise on your prayers. I love how all your advice will always rounds and comes back to God. I love how God is the essence of your existence.
+        I love how you love God, I love how you don’t compromise on your prayers. I love how all your advice will always rounds back to God. I love how God is the essence of your existence.
         
-        I see you go through challenges yet you’ll always say “Iwi, don’t worry, I’ll fast and pray about it”. I love how you never doubt God and the trust you always have in him.
+        I see you go through challenges yet you’ll always say “Iwi, don’t worry, I’ll fast and pray about it”. I love the trust you always have in God and how you never doubt him.
         `,
     },
     {
         id: 2,
         image: "/images/IMG_7702.JPG",
-        title: "Title 2",
-        text: "Text 2",
+        title: "Your heart",
+        text: 
+        `
+        I love how you love people. I love how welcoming you are, you have such a big heart that accommodates everyone. I love how you don’t play about the people you call your own, you have so much love to give and it extends to everyone you come in contact with.
+
+        I love how you give people second chances but never let them take you for a fool.  Your heart has balance as well, you don’t love stupidly which is what every one should strive for. Yet you’ve hacked it already.
+        `,
     },
     {
         id: 3,
         image: "/images/IMG_7698.JPG",
-        title: "Title 3",
-        text: "Text 3",
+        title: "How you love your loved ones",
+        text: 
+        `
+        You’re so family oriented and I love how you don’t joke about your family or the people you care about. It’s so evident how much they mean to you by your actions towards them. 
+
+        I doubt you can go a day without talking to them or not knowing what they are up to. If you’re not calling, you’re texting, if you’re not texting, you’re keeping streaks. I love the intentionality you put into staying updated with everyone.
+        `,
     },
     {
         id: 4,
         image: "/images/IMG_7701.JPG",
-        title: "Title 4",
-        text: "Text 4",
+        title: "How wise you are",
+        text:   
+        `
+        I love how wise you are, I can tell from the advice you always give me and even your friends. You have such a unique perspective about life, even the way you think. You always have the right things to say at every given time.
+        `,
     },
     {
         id: 5,
         image: "/images/IMG_7704.JPG",
-        title: "Title 5",
-        text: "Text 5",
+        title: "How fearless you are",
+        text:   
+        `
+        Remember when you made up your mind that he wanted to study in UNICAL, far away from home. What did you do, you packed up your bags and left. Same thing with Lagos.
+
+        One thing that always stands out in every decision you make is that, you always figure it out and make it work. You’re so fearless, so optimistic and such a risk taker. 
+
+        You believe it will always work out regardless of whatever it is, you don’t sit around waiting to calculate all the possible outcomes, you just take life as it comes and tackle it head on and that’s one of the many things I love about you.
+
+        `,
     }
 ]
 
@@ -189,10 +210,19 @@ export const wishesFromLovedOnes = [
         name: "Juliet",
     },
     {
-        id: 10,
-        image: "/images/IMG_7697.JPG",
-        wish: "Wish 10",
-        name: "Magdalene",
+        id: 17,
+        image: "/images/Eno.JPG",
+        wish: 
+        `
+        Happy birthday to my beautiful Kosi! 🤍
+
+        From being one of my amazing neighbors to becoming such a wonderful friend, I’m genuinely grateful our paths crossed. You’ve always been such a beautiful soul, inside and out, and I’m so proud of the woman you’re becoming.
+
+        I hope this new chapter brings you so much joy, love, growth, and everything your heart desires. Lagos is lucky to have you! 😂❤️ Keep shining, keep being you, and never forget how loved and special you are. 
+
+        Happy birthday, Kosi! 🥂✨
+        `,
+        name: "Eno",
     },
     {
         id: 11,
@@ -302,20 +332,6 @@ export const wishesFromLovedOnes = [
         `,
         name: "Mano",
     },
-    {
-        id: 17,
-        image: "/images/Eno.JPG",
-        wish: 
-        `
-        Happy birthday to my beautiful Kosi! 🤍
-
-        From being one of my amazing neighbors to becoming such a wonderful friend, I’m genuinely grateful our paths crossed. You’ve always been such a beautiful soul, inside and out, and I’m so proud of the woman you’re becoming.
-
-        I hope this new chapter brings you so much joy, love, growth, and everything your heart desires. Lagos is lucky to have you! 😂❤️ Keep shining, keep being you, and never forget how loved and special you are. 
-
-        Happy birthday, Kosi! 🥂✨
-        `,
-        name: "Eno",
-    },
+    
 ]
 
