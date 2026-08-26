@@ -52,7 +52,7 @@ export function MobileSlider({
 
               {/* Text */}
               <div className="pt-6 px-2 text-center">
-                <h2 className="text-2xl font-bold text-[#4A5D7A] mb-2">
+                <h2 className="text-2xl font-bold text-[#E56B8A] mb-2">
                   {currentLove.title}
                 </h2>
 
