@@ -125,7 +125,6 @@ function MainPage() {
           <DesktopSlider
             currentNote={currentLove}
             direction={loveDirection}
-            isEven={currentLoveIndex % 2 === 0}
           />
           <Navigation
             currentIndex={currentLoveIndex}
@@ -138,7 +137,6 @@ function MainPage() {
           <MobileWishSlider
             currentWish={currentWish}
             direction={wishDirection}
-            isEven={currentWishIndex % 2 === 0}
             currentIndex={currentWishIndex}
             totalWishes={wishesFromLovedOnes.length}
             onNext={nextWish}
@@ -147,7 +145,6 @@ function MainPage() {
           <DesktopWishSlider
             currentWish={currentWish}
             direction={wishDirection}
-            isEven={currentWishIndex % 2 === 0}
           />
           <Navigation
             currentIndex={currentWishIndex}

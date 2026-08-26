@@ -42,48 +42,61 @@ Deno.serve(async (req) => {
             padding: 30px;
             background: #fff7fa;
             border-radius: 20px;
+            text-align: center;
           ">
-            <h1 style="color: #E56B8A;">
-              💌 You received a new birthday wish on your Wish Wall!
+            <h1 style="color: #E56B8A; text-align: center">
+              We celebrate you once again today Koko!
             </h1>
 
-            <p style="font-size: 16px; color: #4A5D7A;">
+            <p style="font-size: 16px; color: #4A5D7A; text-align: center;">
               <strong>${name}</strong> is wishing you a happy birthday
               and just dropped a wish on your Wish Wall.
             </p>
 
             <div style="
-              margin: 25px 0;
+              margin: 25px auto;
               padding: 20px;
+              max-width: 600px;
               background: white;
-              border-left: 4px solid #E56B8A;
+              
               border-radius: 12px;
               color: #4B5563;
               font-size: 16px;
               line-height: 1.6;
+              text-align: center;
+              mb: 4;
             ">
               "${wishText}"
             </div>
 
             <a
-              href="YOUR_WEBSITE_URL"
-              style="
-                display: inline-block;
-                padding: 12px 24px;
-                background: #E56B8A;
-                color: white;
-                text-decoration: none;
-                border-radius: 999px;
-                font-weight: bold;
-              "
-            >
-              ✨ See the wish
-            </a>
+  href="https://kokos24th.com"
+  style="
+    display: inline-block;
+    margin: 0 auto;
+    padding: 13px 26px;
+    background: #ffffff;
+    color: #4A5D7A;
+    text-decoration: none;
+    border: 2px solid #E56B8A;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    box-shadow:
+      0 0 5px rgba(229, 107, 138, 0.35),
+      0 0 10px rgba(229, 107, 138, 0.25),
+      0 0 20px rgba(229, 107, 138, 0.15);
+  "
+>
+  Click to view the wish
+</a>
 
             <p style="
               margin-top: 30px;
               color: #4A5D7A;
               font-size: 15px;
+              text-align: center;
             ">
               Cheers to your 24th once again! 🥂❤️
             </p>
