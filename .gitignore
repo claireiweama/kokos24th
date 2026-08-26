@@ -4,3 +4,4 @@ dist
 .vscode
 rand.txt
 .env
+.env.local
