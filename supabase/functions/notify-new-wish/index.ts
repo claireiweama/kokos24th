@@ -32,7 +32,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Koko's 24th 💕 <hello@kokos24th.com>",
-        to: ["claireiweama@gmail.com"],
+        to: ["favouriweama@gmail.com"],
         subject: `🎂 ${name} left you a birthday wish on your Wish Wall!`,
         html: `
           <div style="

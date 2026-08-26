@@ -4,21 +4,29 @@ export async function createWish(name, wish) {
   const { data, error } = await supabase
     .from("wishes")
     .insert({
-      name: name,
-      wish: wish,
+      name,
+      wish,
       approved: true,
     })
     .select()
     .single();
 
-    if (error) {
+  if (error) {
+    console.error("CREATE WISH ERROR:", {
+      message: error.message,
+      details: error.details,
+      hint: error.hint,
+      code: error.code,
+      fullError: error,
+    });
+
     throw error;
   }
 
   return data;
 }
 
-  export async function getWishes() {
+export async function getWishes() {
   const { data, error } = await supabase
     .from("wishes")
     .select("*")
@@ -28,6 +36,14 @@ export async function createWish(name, wish) {
     });
 
   if (error) {
+    console.error("GET WISHES ERROR:", {
+      message: error.message,
+      details: error.details,
+      hint: error.hint,
+      code: error.code,
+      fullError: error,
+    });
+
     throw error;
   }
 
