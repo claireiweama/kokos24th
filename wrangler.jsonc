@@ -7,6 +7,3 @@
     "not_found_handling": "single-page-application"
   }
 }
-EOF 
-
-cat wrangler.jsonc 

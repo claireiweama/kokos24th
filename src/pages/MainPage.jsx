@@ -88,7 +88,7 @@ function MainPage() {
 
   return (
     <>
-      {/* <BackgroundMusic /> */}
+      <BackgroundMusic />
 
       <div className="relative min-h-screen overflow-hidden">
         <HeartsBackground />
